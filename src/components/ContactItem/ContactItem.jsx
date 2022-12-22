@@ -3,6 +3,7 @@ import style from './ContactItem.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactSlice';
+import { ReactComponent as Delete } from "./delete-icon.svg";
 
 const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -19,7 +20,12 @@ const ContactItem = ({ id, name, number }) => {
         type="submit"
         onClick={() => contactsDelete(id)}
       >
-        Delete
+        <Delete
+            style={{
+              width: '26px',
+              height: '20px',
+            }}
+        />
       </button>
     </li>
   );
